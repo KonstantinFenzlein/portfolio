@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './privacy.html',
   styleUrl: './privacy.scss',
 })
-export class Privacy {
+export class PrivacyComponent {
 
 }
