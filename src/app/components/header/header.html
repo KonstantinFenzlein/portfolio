@@ -1,14 +1,30 @@
-<nav>
-  <div class="logo">MeinPortfolio</div>
-  <a>
-    <img src="./public.logo.jpg" alt="Logo" width="50" height="50" />
-  </a>
-  <ul>
-    <!-- Der Link "/" führt zur Startseite -->
-    <li><a routerLink="/" routerLinkActive="active">About me</a></li>
+<header>
+  <div class="header-content">
 
-    <!-- Diese Links führen zu den anderen Seiten -->
-    <li><a routerLink="/imprint" routerLinkActive="active">Skill set</a></li>
-    <li><a routerLink="/privacy" routerLinkActive="active">My work</a></li>
-  </ul>
-</nav>
+    <!-- LINKS: Logo -->
+    <a routerLink="/" class="logo">
+      <img src="images/logo.jpg" alt="S Logo" class="logo-img" width="100" height="100">
+      <!-- <span class="logo-text">S</span> -->
+    </a>
+
+    <!-- RECHTS: Der Container für alles andere -->
+    <div class="right-side">
+
+      <!-- 1. Die Links (nebeneinander) -->
+      <nav>
+        <a routerLink="/" fragment="about">About me</a>
+        <a routerLink="/" fragment="skills">Skill set</a>
+        <a routerLink="/" fragment="work">My work</a>
+      </nav>
+
+      <!-- 2. Die Sprache (nebeneinander) -->
+      <div class="language-switch">
+        <span class="lang-option">DE</span>
+        <span class="separator">/</span>
+        <span class="lang-option active">EN</span>
+      </div>
+
+    </div>
+
+  </div>
+</header>
