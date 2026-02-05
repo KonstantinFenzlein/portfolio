@@ -52,7 +52,7 @@
   width: 80%;         /* Bild ist 80% so breit wie der Wrapper */
   height: auto;       /* Höhe passt sich automatisch an -> Seitenverhältnis bleibt! */
 
-  border-radius: 0 0 200px 200px; /* Optional: Rundung unten */
+  border-radius: 200px 200px 200px 200px; /* Optional: Rundung unten */
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
 
 }
@@ -130,5 +130,44 @@ h1 {
   /* Zentrieren auf Mobile */
   @media (max-width: 900px) {
     align-self: center;
+  }
+}
+
+/* --- SOCIAL MEDIA ICONS --- */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Abstand zwischen den Icons */
+  margin-top: 3rem; /* Abstand nach oben zum Button */
+
+  /* Falls du willst, dass sie rechtsbündig sind, nutze: */
+  /* justify-content: flex-end; */
+
+  /* Falls sie linksbündig (unter dem Text) bleiben sollen (Standard): */
+  justify-content: flex-start;
+
+  a {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+
+    /* Der Hover-Effekt (Hüpfen) */
+    &:hover {
+      transform: translateY(-5px) scale(1.1); /* Geht 5px hoch und wird 10% größer */
+    }
+  }
+
+  img {
+    width: 40px; /* Größe der Icons */
+    height: auto;
+
+    /* Optional: Icons einfärben? */
+    /* Wenn deine Icons schwarz sind und du sie blau willst, geht das nur bei SVG. */
+    /* Bei PNGs nutzen wir die Farben so, wie sie im Bild sind. */
+  }
+
+  /* Mobile Anpassung: Zentrieren */
+  @media (max-width: 900px) {
+    justify-content: center;
+    margin-top: 2rem;
   }
 }

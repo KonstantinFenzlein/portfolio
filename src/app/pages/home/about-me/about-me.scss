@@ -1,0 +1,119 @@
+.about-section {
+  position: relative; /* Damit die Blobs sich daran orientieren */
+  padding: 6rem 5%;
+  background-color: white;
+  overflow: hidden; /* Damit Blobs nicht aus dem Bild ragen */
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- DEKORATION (BLOBS) --- */
+.blob {
+  position: absolute;
+  z-index: 0; /* Im Hintergrund */
+  opacity: 0.8;
+}
+
+.blob-1 {
+  width: 100px;
+  top: -20px;
+  left: 45%;
+}
+
+.blob-2 {
+  width: 60px;
+  top: 40px;
+  left: 55%;
+}
+
+/* --- GRID LAYOUT --- */
+.content-container {
+  position: relative;
+  z-index: 1; /* Über den Blobs */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Zwei gleich große Spalten */
+  gap: 80px; /* Großer Abstand in der Mitte */
+  align-items: flex-start; /* Oben bündig */
+
+  /* Mobile: Untereinander */
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* --- LINKE SPALTE --- */
+h2 {
+  font-family: var(--font-display); /* Baloo */
+  font-size: 4rem;
+  line-height: 1.1;
+  color: var(--primary-blue);
+  margin-bottom: 3rem;
+}
+
+.i-am-section h3 {
+  font-family: var(--font-display);
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 10px; /* Leicht eingerückt passend zu den Icons */
+}
+
+.icons-list {
+  display: flex;
+  gap: 30px;
+
+  /* Auf Handy Icons evtl. untereinander? */
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  img {
+    width: 30px;
+    height: auto;
+  }
+
+  span {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.3;
+  }
+}
+
+
+/* --- RECHTE SPALTE --- */
+.right-column {
+  padding-top: 1rem; /* Damit es optisch auf Höhe des Textes links liegt */
+
+  p {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
+
+.outline-btn {
+  background-color: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-family: var(--font-main);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--primary-blue);
+    color: white;
+  }
+}
