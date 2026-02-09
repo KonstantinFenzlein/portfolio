@@ -1,0 +1,80 @@
+.friends-section {
+  background-color: var(--primary-blue); /* Blauer Hintergrund */
+  color: white; /* Weißer Text */
+  padding: 6rem 5%;
+
+  /* Leichter Schatten nach innen */
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* --- HEADER --- */
+.header-content {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  h2 {
+    font-family: var(--font-display); /* Baloo */
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-family: var(--font-main); /* Montserrat */
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9; /* Leicht transparent */
+  }
+}
+
+/* --- GRID LAYOUT --- */
+.testimonials-container {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem; /* Großer Abstand zwischen den Spalten */
+
+  /* Mobile: Untereinander */
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center; /* Auf Handy Text zentrieren */
+  }
+}
+
+/* --- EINZELNE KARTE --- */
+.testimonial-card {
+  flex: 1; /* Alle Karten sind gleich breit */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 900px) {
+    align-items: center; /* Auf Handy mittig */
+  }
+}
+
+.name {
+  font-family: var(--font-display); /* Baloo */
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+
+  }
+
+.project {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.quote {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 300;
+}

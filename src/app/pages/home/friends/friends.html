@@ -1,23 +1,24 @@
-<div class="friends-container">
-  <h3>Friends / Colleagues</h3>
+<section class="friends-section">
 
-  <div class="friends-wrapper">
-    <!-- Person 1 -->
-    <div class="friend-card">
-      <div class="profile-img"></div>
-      <div class="text">
-        <h4>Max Mustermann</h4>
-        <p>"Super Zusammenarbeit, sehr empfehlenswert!"</p>
-      </div>
-    </div>
-
-    <!-- Person 2 -->
-    <div class="friend-card">
-      <div class="profile-img"></div>
-      <div class="text">
-        <h4>Erika Musterfrau</h4>
-        <p>"Toller Frontend Developer."</p>
-      </div>
-    </div>
+  <!-- Header Bereich -->
+  <div class="header-content">
+    <h2>Immer ein Teamplayer!</h2>
+    <p class="subtitle">Das sagen meine Kollegen über mich</p>
   </div>
-</div>
+
+  <!-- Die 3 Karten -->
+  <div class="testimonials-container">
+
+    @for (t of testimonials; track t.name) {
+      <div class="testimonial-card">
+        <h3 class="name">{{ t.name }}</h3>
+        <span class="project">{{ t.project }}</span>
+
+
+        <p class="quote">"{{ t.text }}"</p>
+      </div>
+    }
+
+  </div>
+
+</section>
