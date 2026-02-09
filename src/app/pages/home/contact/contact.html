@@ -1,22 +1,102 @@
-<div class="contact-container">
-  <div class="contact-text">
-    <h2>Contact</h2>
-    <p>Got a problem to solve?</p>
-    <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
-    <p>Need a Frontend developer? <b>Contact me!</b></p>
+<section class="contact-section" id="contact">
+
+  <!-- DEKO: Der Ball oben in der Mitte -->
+  <div class="blue-shadow-top"></div>
+
+  <!-- CONTAINER -->
+  <div class="contact-container">
+
+    <!-- Überschrift ganz oben -->
+    <h1 class="section-title">Kontakt</h1>
+
+    <div class="content-wrapper">
+
+      <!-- LINKE SEITE: Text -->
+      <div class="left-side">
+        <h3>Problemlöser zu Diensten</h3>
+
+        <p class="description">
+          Gerne können Sie hier Kontakt mit mir aufnehmen, um über mögliche Projekte zu sprechen oder einfach nur Hallo zu sagen.
+          Ich garantiere Ihnen eine schnelle Antwort, um einen Mehrwert für Ihr Projekt zu schaffen. Zögern Sie nicht, mich zu kontaktieren!
+        </p>
+
+        <p class="call-to-action">
+          Benötigen Sie einen Fullstack-Entwickler? <b>Bitte hier entlang!</b>
+        </p>
+
+
+        <img src="images/ellipse.png" class="blue-circle-left" alt="Ellipse">
+      </div>
+
+
+      <!-- RECHTE SEITE: Formular -->
+      <div class="right-side">
+
+        <form #contactForm="ngForm">
+
+          <!-- Name Input -->
+          <div class="input-group">
+            <input
+              type="text"
+              placeholder="Dein Name"
+              name="name"
+              [(ngModel)]="contactData.name"
+              required>
+          </div>
+
+          <!-- Email Input -->
+          <div class="input-group">
+            <input
+              type="email"
+              placeholder="Deine E-Mail-Adresse"
+              name="email"
+              [(ngModel)]="contactData.email"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          </div>
+
+          <!-- Message Textarea -->
+          <div class="input-group">
+            <textarea
+              placeholder="Deine Nachricht"
+              name="message"
+              [(ngModel)]="contactData.message"
+              rows="6"
+              required></textarea>
+          </div>
+
+          <!-- Checkbox Datenschutz -->
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="privacy"
+              name="privacy"
+              [(ngModel)]="contactData.privacyPolicy"
+              required>
+            <label for="privacy">
+              Ich habe die <a routerLink="/privacy">privacy policy</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="button-container">
+            <!-- Button ist disabled (grau), solange das Formular ungültig ist -->
+            <button type="submit" [disabled]="!contactForm.valid">
+              Nachricht senden
+            </button>
+          </div>
+
+        </form>
+
+
+      </div>
+
+    </div>
   </div>
 
-  <form>
-    <input type="text" placeholder="Your name" required>
-    <input type="email" placeholder="Your email" required>
-    <textarea placeholder="Your message" rows="5" required></textarea>
+  <!-- PFEIL NACH OBEN BUTTON -->
+  <div class="go-up-btn" (click)="scrollToTop()">
+        <span>↑</span>
+  </div>
 
-    <!-- Checkbox für Datenschutz -->
-    <div class="privacy-check">
-       <input type="checkbox" required>
-       <span>I've read the <a href="/privacy">privacy policy</a> and agree to the processing of my data.</span>
-    </div>
-
-    <button type="submit">Say Hello :)</button>
-  </form>
-</div>
+</section>
