@@ -1,21 +1,44 @@
-<div class="portfolio-container">
-  <h3>My work</h3>
-  <p>Eine Auswahl meiner Projekte</p>
+<section class="portfolio-section">
 
-  <!-- Projekt 1 -->
-  <div class="project">
-    <h4>Join</h4>
-    <p>JavaScript | HTML | CSS</p>
-    <p>El Polo Loco</p>
-    <p>Pokedex</p>
-    <button>Test it</button>
+  <div class="header-content">
+    <h2>My work</h2>
+    <p class="subtitle">
+      <!--Explore a selection of my work here - Interact with projects to see my skills in action.-->
+      Hier finden Sie eine Auswahl meiner Arbeiten – interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.
+    </p>
   </div>
 
-  <!-- Projekt 2 -->
-  <div class="project">
-    <h4>El Pollo Loco</h4>
-    <p>JavaScript | OOP</p>
-    <p>Ein Jump-and-Run Spiel...</p>
-    <button>Test it</button>
+  <div class="projects-container">
+
+    <!-- Wir loopen durch die Projekte -->
+    @for (project of projects; track project.title) {
+
+      <div class="project-row">
+
+        <!-- Bereich 1: Das Bild -->
+        <div class="image-column">
+          <div class="img-wrapper">
+            <!-- Der blaue Blob im Hintergrund -->
+            <div class="blob-bg"></div>
+            <!-- Der Screenshot -->
+            <img [src]="project.image" [alt]="project.title" class="project-img">
+          </div>
+        </div>
+
+        <!-- Bereich 2: Der Text -->
+        <div class="text-column">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <span class="tech-stack">{{ project.techStack }}</span>
+          <p class="description">{{ project.description }}</p>
+
+          <a [href]="project.githubLink" target="_blank" class="outline-btn">
+            Github
+          </a>
+        </div>
+
+      </div>
+
+    }
+
   </div>
-</div>
+</section>

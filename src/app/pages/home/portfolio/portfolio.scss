@@ -1,0 +1,169 @@
+/* src/app/pages/home/portfolio/portfolio.scss */
+
+/* --- GRUNDLAYOUT DER SEKTION --- */
+.portfolio-section {
+  padding: 6rem 5%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: white;
+  overflow: visible; /* Schatten/Blobs werden nicht abgeschnitten */
+}
+
+
+.header-content {
+  text-align: center;
+  margin-bottom: 6rem;
+
+  h2 {
+    font-family: var(--font-display); /* Baloo */
+    font-size: 4rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-family: var(--font-main); /* Montserrat */
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}
+
+/* --- PROJEKT REIHE (CONTAINER) --- */
+.project-row {
+  display: flex;
+  align-items: center; /* Vertikal mittig */
+  justify-content: space-between;
+  gap: 80px; /* Abstand zwischen Bild und Text */
+  margin-bottom: 8rem; /* Abstand zum nächsten Projekt */
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  /* Mobile Anpassung: Immer untereinander */
+  @media (max-width: 1000px) {
+    flex-direction: column !important; /* !important überschreibt das row-reverse */
+    gap: 40px;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+}
+
+/* --- BILD BEREICH --- */
+.image-column {
+  flex: 1; /* Nimmt 50% Platz */
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Der Container um das Bild und den Blob */
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  cursor: pointer;
+
+  /* --- HOVER EFFEKT LOGIK --- */
+
+  &:hover .project-img {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  }
+
+  &:hover .blob-bg {
+    transform: scale(1.1) rotate(5deg); /* Blob wird größer und dreht sich */
+  }
+}
+
+
+.blob-bg {
+  position: absolute;
+  top: -25%;  /* Positionierung hinter dem Bild */
+  left: -35%;
+  width: 30%; /* Größer als das Bild */
+  height: 130%;
+  background-image: url('/images/ellipse.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0; /* HINTER dem Bild */
+  transition: transform 0.5s ease-out;
+}
+
+
+.project-img {
+  position: relative;
+  z-index: 1; /* VOR dem Blob */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* --- TEXT BEREICH --- */
+.text-column {
+  flex: 1; /* Nimmt 50% Platz */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* Mobile: Button zentrieren */
+  @media (max-width: 1000px) {
+    align-items: center;
+  }
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.tech-stack {
+  font-family: var(--font-main);
+  color: #854fee; /* Lila-Blau Ton */
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.description {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 500px; /* Damit die Zeilen nicht zu lang werden */
+}
+
+/* Button Styling */
+.outline-btn {
+  display: inline-block;
+  text-decoration: none;
+  width: fit-content;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  font-family: var(--font-main);
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    transform: translateY(-3px); /* Button hüpft minimal hoch */
+    box-shadow: 0 5px 15px rgba(68, 88, 220, 0.3); /* Leichter blauer Schein */
+  }
+}

@@ -17,12 +17,9 @@ export class SkillsComponent {
     { name: 'TypeScript', icon: 'images/skills/typescript.png' },
     { name: 'JavaScript', icon: 'images/skills/javascript.png' },
     { name: 'HTML', icon: 'images/skills/html.png' },
-    { name: 'Scrum', icon: 'images/skills/scrum.png' },
-    { name: 'Firebase', icon: 'images/skills/firebase.png' },
-    { name: 'Git', icon: 'images/skills/git.png' },
     { name: 'CSS', icon: 'images/skills/css.png' },
-    { name: 'REST-API', icon: 'images/skills/rest-api.png' },
-    { name: 'Material Design', icon: 'images/skills/material.png' },
+
+
   ];
 
 }

@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
+// --- DEINE IMPORTS ---
 import { Hero } from './hero/hero';
 import { AboutMe } from './about-me/about-me';
-import { Skills } from './skills/skills';
-import { Portfolio } from './portfolio/portfolio';
+import { SkillsComponent } from './skills/skills'; // Das hatten wir schon gefixt
 import { Friends } from './friends/friends';
 import { Contact } from './contact/contact';
+
+// --- HIER IST DIE KORREKTUR ---
+// FALSCH: import { Portfolio } from ...
+// RICHTIG:
+import { PortfolioComponent } from './portfolio/portfolio';
 
 @Component({
   selector: 'app-home',
@@ -16,9 +20,9 @@ import { Contact } from './contact/contact';
     CommonModule,
     Hero,
     AboutMe,
-    Skills,
-    Portfolio,
+    SkillsComponent,
     Friends,
+    PortfolioComponent, // <--- Auch hier unten den Namen anpassen!
     Contact
   ],
   templateUrl: './home.html',
