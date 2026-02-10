@@ -1,9 +1,9 @@
-<header>
+<header [class.hidden]="isHidden">
   <div class="header-content">
 
     <!-- LINKS: Logo -->
     <a routerLink="/" class="logo">
-      <img src="images/logo.jpg" alt="S Logo" class="logo-img" width="100" height="100">
+      <img src="images/logo.png" alt="S Logo" class="logo-img" width="100" height="100">
       <!-- <span class="logo-text">S</span> -->
     </a>
 
@@ -19,10 +19,26 @@
 
       <!-- 2. Die Sprache (nebeneinander) -->
       <div class="language-switch">
-        <span class="lang-option">DE</span>
-        <span class="separator">/</span>
-        <span class="lang-option active">EN</span>
-      </div>
+
+  <!-- DEUTSCH -->
+  <span
+    class="lang-option"
+    [class.active]="activeLang === 'DE'"
+    (click)="switchLanguage('DE')">
+    DE
+  </span>
+
+  <span class="separator">/</span>
+
+  <!-- ENGLISCH -->
+  <span
+    class="lang-option"
+    [class.active]="activeLang === 'EN'"
+    (click)="switchLanguage('EN')">
+    EN
+  </span>
+
+</div>
 
     </div>
 

@@ -1,0 +1,207 @@
+.contact-section {
+  position: relative;
+  padding: 6rem 5%;
+  background-color: white;
+  overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- TITEL --- */
+.section-title {
+  font-family: var(--font-display); /* Baloo */
+  font-size: 4rem;
+  color: var(--primary-blue);
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+
+  /* Der blaue Strich unter dem Titel */
+  &::after {
+    content: '';
+    display: block;
+    width: 240px;
+    height: 4px;
+    background-color: var(--primary-blue);
+    margin-top: 10px;
+  }
+}
+
+/* --- GRID LAYOUT --- */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% / 50% Aufteilung */
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr; /* Untereinander auf Handy */
+    gap: 40px;
+  }
+}
+
+/* --- LINKE SEITE (TEXT) --- */
+.left-side {
+  position: relative;
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 2rem;
+    max-width: 450px;
+  }
+
+  .call-to-action {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    color: #444;
+
+    b {
+      color: var(--primary-blue);
+      font-weight: 700;
+    }
+  }
+}
+
+/* --- RECHTE SEITE (FORM) --- */
+.right-side {
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs & Textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  outline: none;
+  background-color: #fcfcfc;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+
+  /* Platzhalter Farbe */
+  &::placeholder {
+    color: #aaa;
+  }
+
+  /* Wenn man reinklickt -> Blau */
+  &:focus {
+    border-color: var(--primary-blue);
+    background-color: white;
+  }
+
+  &.ng-valid.ng-touched {
+    border-color: #854fee;
+  }
+}
+
+textarea {
+  resize: vertical; /* Darf nur nach unten gezogen werden */
+}
+
+/* Checkbox Bereich */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start; /* Oben bündig falls Text lang ist */
+  gap: 10px;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: #666;
+
+  input[type="checkbox"] {
+    margin-top: 4px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+  }
+
+  a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+/* Submit Button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+button {
+  background-color: transparent; /* Erst mal grau/transparent */
+  border: 2px solid #ccc;
+  color: #ccc;
+  padding: 12px 50px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: var(--font-main);
+  cursor: not-allowed;
+  transition: all 0.3s;
+
+  /* Wenn das Formular GÜLTIG ist (button wird freigeschaltet) */
+  &:not(:disabled) {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--primary-blue);
+      color: white;
+    }
+  }
+}
+
+/* --- Ellipse --- */
+.blue-circle-left {
+  position: absolute;
+  bottom: -150px;
+  left: 200px;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+}
+
+/* --- PFEIL NACH OBEN --- */
+.go-up-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 10;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}

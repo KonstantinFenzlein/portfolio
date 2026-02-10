@@ -1,0 +1,48 @@
+.imprint-section {
+  /* Abstand nach oben, damit der Text nicht unter dem fixierten Header verschwindet */
+  padding-top: 120px;
+  padding-bottom: 4rem;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  background-color: white;
+  min-height: 100vh; /* Mindestens so hoch wie der Bildschirm */
+}
+
+.container {
+  max-width: 800px; /* Text nicht zu breit machen*/
+  margin: 0 auto;   /* Zentrieren */
+}
+
+h1 {
+  font-family: var(--font-display); /* Baloo */
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-family: var(--font-display); /* Baloo */
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-family: var(--font-main); /* Montserrat */
+  font-size: 1rem;
+  line-height: 1.6; /* Lesbarkeit! */
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
