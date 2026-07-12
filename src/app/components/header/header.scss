@@ -9,7 +9,7 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  transition: transform 0.3s ease-in-out; /* Weiche Animation beim Ausblenden */
+  transition: transform 0.125s ease-in-out; /* Weiche Animation beim Ausblenden */
 
 
 
@@ -84,7 +84,7 @@ nav {
     font-size: 1.1rem;
     position: relative;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.125s;
 
     &:hover, &.active {
       font-weight: 700;
@@ -105,7 +105,7 @@ nav {
 .lang-option {
   cursor: pointer;
   opacity: 0.6;
-  transition: opacity 0.2s;
+  transition: opacity 0.125s;
 
   &:hover { opacity: 1; font-weight: 700; }
 

@@ -92,7 +92,7 @@
   background-repeat: no-repeat;
   background-position: center;
   z-index: 0; /* HINTER dem Bild */
-  transition: transform 0.5s ease-out;
+  transition: transform 0.125s ease-out;
 }
 
 
@@ -103,7 +103,7 @@
   height: auto;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  transition: transform 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
 }
 
 /* --- TEXT BEREICH --- */
@@ -157,7 +157,7 @@
   font-family: var(--font-main);
   font-weight: 500;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.125s ease;
   background-color: transparent;
 
   &:hover {

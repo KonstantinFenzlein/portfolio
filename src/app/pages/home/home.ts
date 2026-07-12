@@ -1,16 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// --- DEINE IMPORTS ---
 import { Hero } from './hero/hero';
 import { AboutMe } from './about-me/about-me';
-import { SkillsComponent } from './skills/skills'; // Das hatten wir schon gefixt
+import { SkillsComponent } from './skills/skills';
 import { Friends } from './friends/friends';
 import { Contact } from './contact/contact';
-
-// --- HIER IST DIE KORREKTUR ---
-// FALSCH: import { Portfolio } from ...
-// RICHTIG:
 import { PortfolioComponent } from './portfolio/portfolio';
 
 @Component({
@@ -22,7 +16,7 @@ import { PortfolioComponent } from './portfolio/portfolio';
     AboutMe,
     SkillsComponent,
     Friends,
-    PortfolioComponent, // <--- Auch hier unten den Namen anpassen!
+    PortfolioComponent,
     Contact
   ],
   templateUrl: './home.html',

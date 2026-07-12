@@ -9,9 +9,8 @@ export const appConfig: ApplicationConfig = {
       routes,
 
       withInMemoryScrolling({
-        scrollPositionRestoration: 'top', // Das sorgt dafür, dass man bei neuer Seite (z.B. Impressum) immer OBEN startet.
-
-        anchorScrolling: 'enabled', // Das sorgt dafür, dass Links wie "Home -> #contact" weich zum Abschnitt scrollen.
+        scrollPositionRestoration: 'top',
+        anchorScrolling: 'enabled',
       }),
     ),
   ],

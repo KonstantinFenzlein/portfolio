@@ -1,21 +1,16 @@
 <section class="portfolio-section">
 
   <div class="header-content">
-    <h2>My work</h2>
-    <p class="subtitle">
-      <!--Explore a selection of my work here - Interact with projects to see my skills in action.-->
-      Hier finden Sie eine Auswahl meiner Arbeiten – interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.
-    </p>
+    <h2>{{ i18n.translate('work.title') }}</h2>
+    <p class="subtitle">{{ i18n.translate('work.subtitle') }}</p>
   </div>
 
   <div class="projects-container">
 
-    <!-- Wir loopen durch die Projekte -->
     @for (project of projects; track project.title) {
 
       <div class="project-row">
 
-        <!-- Bereich 1: Das Bild -->
         <div class="image-column">
           <div class="img-wrapper">
             <!-- Der blaue Blob im Hintergrund -->
@@ -25,14 +20,13 @@
           </div>
         </div>
 
-        <!-- Bereich 2: Der Text -->
         <div class="text-column">
           <h3 class="project-title">{{ project.title }}</h3>
           <span class="tech-stack">{{ project.techStack }}</span>
-          <p class="description">{{ project.description }}</p>
+          <p class="description">{{ i18n.currentLanguage() === 'DE' ? project.descriptionDE : project.descriptionEN }}</p>
 
           <a [href]="project.githubLink" target="_blank" class="outline-btn">
-            Github
+            GitHub
           </a>
         </div>
 

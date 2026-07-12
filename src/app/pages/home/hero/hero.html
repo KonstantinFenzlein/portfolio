@@ -1,6 +1,4 @@
 <section class="hero-section">
-
- <!-- LINKE SEITE -->
 <div class="left-side">
   <div class="image-wrapper">
     <!-- 1. Der Hintergrund (Die blaue Ellipse) -->
@@ -11,12 +9,11 @@
   </div>
 </div>
 
-  <!-- RECHTE SEITE: Text -->
   <div class="right-side">
     <div class="text-content">
-      <span class="greeting">Hi! Ich bin Konstantin.</span>
-      <h1>Fullstack<br>DEVELOPER</h1>
-      <button class="cta-btn">Let's talk</button>
+      <span class="greeting">{{ i18n.translate('hero.greeting') }}</span>
+      <h1 [innerHTML]="i18n.translate('hero.title')"></h1>
+      <button class="cta-btn">{{ i18n.translate('hero.cta') }}</button>
     </div>
   </div>
 

@@ -7,6 +7,29 @@
   margin: 0 auto;
 }
 
+/* Success Message */
+.success-message {
+  background-color: #F0FDF4;
+  border: 1px solid #16A34A;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: #16A34A;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --- TITEL --- */
 .section-title {
   font-family: var(--font-display); /* Baloo */
@@ -84,6 +107,24 @@ form {
   gap: 20px;
 }
 
+/* Input Group Container */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  &.has-success input,
+  &.has-success textarea {
+    border-color: #16A34A;
+    background-color: #F0FDF4;
+  }
+
+  &.has-error input,
+  &.has-error textarea {
+    border-color: #DC2626;
+    background-color: #FEF2F2;
+  }
+}
+
 /* Inputs & Textarea */
 input[type="text"],
 input[type="email"],
@@ -97,42 +138,89 @@ textarea {
   outline: none;
   background-color: #fcfcfc;
   box-sizing: border-box;
-  transition: border-color 0.3s;
+  transition: border-color 0.1s, background-color 0.1s;
 
-  /* Platzhalter Farbe */
   &::placeholder {
     color: #aaa;
   }
 
-  /* Wenn man reinklickt -> Blau */
   &:focus {
     border-color: var(--primary-blue);
     background-color: white;
   }
-
-  &.ng-valid.ng-touched {
-    border-color: #854fee;
-  }
 }
 
 textarea {
-  resize: vertical; /* Darf nur nach unten gezogen werden */
+  resize: vertical;
+}
+
+/* Status Icons (✓ / ✗) */
+.status-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  font-weight: bold;
+  pointer-events: none;
+
+  &.textarea-status {
+    top: 15px;
+    transform: none;
+  }
+
+  .icon-success {
+    color: #16A34A;
+    animation: popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .icon-error {
+    color: #DC2626;
+    animation: popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Error Messages unter Inputs */
+.error-message {
+  display: block;
+  color: #DC2626;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  margin-left: 0;
+  animation: slideIn 0.2s ease-out;
 }
 
 /* Checkbox Bereich */
 .checkbox-group {
   display: flex;
-  align-items: flex-start; /* Oben bündig falls Text lang ist */
+  align-items: flex-start;
   gap: 10px;
   font-family: var(--font-main);
   font-size: 0.9rem;
   color: #666;
+  margin-bottom: 1.5rem;
+  position: relative;
 
   input[type="checkbox"] {
     margin-top: 4px;
     cursor: pointer;
     width: 16px;
     height: 16px;
+    accent-color: var(--primary-blue);
   }
 
   a {
@@ -140,6 +228,17 @@ textarea {
     text-decoration: none;
     &:hover { text-decoration: underline; }
   }
+
+  &.has-error {
+    color: #DC2626;
+  }
+}
+
+.privacy-error {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  color: #DC2626;
 }
 
 /* Submit Button */
@@ -150,7 +249,7 @@ textarea {
 }
 
 button {
-  background-color: transparent; /* Erst mal grau/transparent */
+  background-color: transparent;
   border: 2px solid #ccc;
   color: #ccc;
   padding: 12px 50px;
@@ -158,9 +257,8 @@ button {
   font-size: 1.2rem;
   font-family: var(--font-main);
   cursor: not-allowed;
-  transition: all 0.3s;
+  transition: all 0.125s;
 
-  /* Wenn das Formular GÜLTIG ist (button wird freigeschaltet) */
   &:not(:disabled) {
     border-color: var(--primary-blue);
     color: var(--primary-blue);
@@ -169,7 +267,12 @@ button {
     &:hover {
       background-color: var(--primary-blue);
       color: white;
+      transform: translateY(-2px);
     }
+  }
+
+  &.loading {
+    opacity: 0.7;
   }
 }
 

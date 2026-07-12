@@ -12,9 +12,9 @@
 
       <!-- 1. Die Links (nebeneinander) -->
       <nav>
-        <a routerLink="/" fragment="about">About me</a>
-        <a routerLink="/" fragment="skills">Skill set</a>
-        <a routerLink="/" fragment="work">My work</a>
+        <a routerLink="/" fragment="about">{{ i18n.translate('nav.about') }}</a>
+        <a routerLink="/" fragment="skills">{{ i18n.translate('nav.skills') }}</a>
+        <a routerLink="/" fragment="work">{{ i18n.translate('nav.work') }}</a>
       </nav>
 
       <!-- 2. Die Sprache (nebeneinander) -->
@@ -23,7 +23,7 @@
   <!-- DEUTSCH -->
   <span
     class="lang-option"
-    [class.active]="activeLang === 'DE'"
+    [class.active]="i18n.currentLanguage() === 'DE'"
     (click)="switchLanguage('DE')">
     DE
   </span>
@@ -33,7 +33,7 @@
   <!-- ENGLISCH -->
   <span
     class="lang-option"
-    [class.active]="activeLang === 'EN'"
+    [class.active]="i18n.currentLanguage() === 'EN'"
     (click)="switchLanguage('EN')">
     EN
   </span>

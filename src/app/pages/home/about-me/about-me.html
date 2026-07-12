@@ -1,15 +1,13 @@
 <section class="about-section">
-  <!-- Dekoration: Die schwebenden Bälle -->
   <img src="images/bg-circle.png" class="blob blob-1" alt="Größere Ellipse" />
   <img src="images/bg-circle.png" class="blob blob-2" alt="Kleinere Ellipse" />
 
   <div class="content-container">
-    <!-- LINKE SPALTE: Headline & Icons -->
     <div class="left-column">
-      <h2>Let's work<br />together</h2>
+      <h2 [innerHTML]="i18n.translate('about.title')"></h2>
 
       <div class="i-am-section">
-        <h3>I am</h3>
+        <h3>{{ i18n.translate('about.iAm') }}</h3>
 
         <div class="icons-list">
           <div class="icon-item">
@@ -27,24 +25,11 @@
       </div>
     </div>
 
-    <!-- RECHTE SPALTE: Text & Button -->
     <div class="right-column">
-      <p>
-        Meine Leidenschaft für IT, Computer und Programmierung basiert auf einer tiefen Faszination
-        für die Funktionsweise digitaler Systeme und deren nahezu unbegrenzte
-        Gestaltungsmöglichkeiten. Mich motiviert es, technologische Zusammenhänge zu verstehen,
-        Prozesse zu optimieren und durch Code reale Probleme effizient zu lösen. Programmierung ist
-        für mich dabei nicht nur Technik, sondern ein kreativer wie analytischer Prozess, in dem
-        strukturierte Logik, saubere Architekturen und nachhaltige Lösungen im Mittelpunkt stehen.
-      </p>
-      <p>
-        Besonders reizt mich die Dynamik der IT-Welt: Neue Technologien, Frameworks und Methoden
-        begreife ich als Chance zur Weiterentwicklung. Mein Anspruch ist es, nicht nur mit
-        bestehenden Systemen zu arbeiten, sondern aktiv innovative Lösungen zu gestalten —
-        zukunftsorientiert, präzise und mit echter Begeisterung für Technologie.
-      </p>
+      <p>{{ i18n.translate('about.description1') }}</p>
+      <p>{{ i18n.translate('about.description2') }}</p>
 
-      <button class="outline-btn">Send a message</button>
+      <button class="outline-btn">{{ i18n.translate('about.cta') }}</button>
     </div>
   </div>
 </section>

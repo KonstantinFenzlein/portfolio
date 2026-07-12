@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { I18nService } from '../../../services/i18n.service';
 
 @Component({
   selector: 'app-friends',
@@ -10,22 +11,13 @@ import { CommonModule } from '@angular/common';
 })
 export class Friends {
 
+  constructor(public i18n: I18nService) {}
 
   testimonials = [
     {
-      name: 'Beispiel Name',
-      project: 'Projekt Join',
-      text: 'Konstantin ist eine zuverlässige und freundliche Person. Er arbeitet strukturiert und schreibt übersichtlichen Code. Ich kann ihn als Kollegen wärmstens empfehlen.'
-    },
-    {
-      name: 'Balu Bär',
-      project: 'Projekt Pokedex',
-      text: 'Konstantin ist ein zuverlässiger Teamplayer und kann mit Stress umgehen. Strukturiertes Arbeiten und übersichtlicher Code.'
-    },
-    {
-      name: 'Tim Tom',
-      project: 'Project Pollo Loco',
-      text: 'Konstantin hat in Zusammenarbeit mit dem Team Inhalte entwickelt, formatiert und geliefert. Er ist eine zuverlässige und freundliche Person.'
+      name: 'Dein Name',
+      project: 'Dein Projekt',
+      text: 'Hier kannst du eine Empfehlung von einem Kollegen einfügen.'
     }
   ];
 

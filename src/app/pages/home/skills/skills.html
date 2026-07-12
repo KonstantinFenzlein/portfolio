@@ -1,20 +1,15 @@
 <section class="skills-section">
 
-  <!-- Überschrift -->
-  <h2>Skill set</h2>
+  <h2>{{ i18n.translate('skills.title') }}</h2>
 
-  <!-- Container für die Icons -->
   <div class="skills-grid">
 
-    <!-- Die Schleife: Für jeden 'skill' in unserer Liste 'skills'... -->
     @for (skill of skills; track skill.name) {
 
       <div class="skill-item">
-        <!-- Das Icon -->
         <div class="icon-box">
           <img [src]="skill.icon" [alt]="skill.name">
         </div>
-        <!-- Der Name darunter -->
         <span>{{ skill.name }}</span>
       </div>
 

@@ -51,7 +51,7 @@ footer {
   color: white;
   text-decoration: none;
   opacity: 0.8;
-  transition: opacity 0.3s;
+  transition: opacity 0.125s;
 
   &:hover {
     opacity: 1;
@@ -68,7 +68,7 @@ footer {
   a {
     display: flex;
     align-items: center;
-    transition: transform 0.2s;
+    transition: transform 0.125s;
 
     &:hover {
       transform: scale(1.1); /* Kleiner Zoom beim Hover */
