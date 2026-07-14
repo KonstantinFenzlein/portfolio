@@ -3,9 +3,10 @@ import { I18nService } from '../../../services/i18n.service';
 
 @Component({
   selector: 'app-about-me',
+  standalone: true,
   imports: [],
   templateUrl: './about-me.html',
-  styleUrl: './about-me.scss',
+  styleUrl: './about-me.scss'
 })
 export class AboutMe {
   constructor(public i18n: I18nService) {}
